@@ -42,11 +42,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
-    <Compile Include="datCliente.cs" />
-    <Compile Include="datPago.cs" />
-    <Compile Include="datPrestamista.cs" />
-    <Compile Include="datPrestamo.cs" />
+    <Compile Include="ClienteDAO.cs" />
+    <Compile Include="PagoDAO.cs" />
+    <Compile Include="DetallePrestamoDAO.cs" />
+    <Compile Include="PrestamoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
+      <Project>{591a6302-8ee6-4f95-8d43-3d68316dbc41}</Project>
+      <Name>CapaEntidad</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

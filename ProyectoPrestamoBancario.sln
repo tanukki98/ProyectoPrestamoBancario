@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaEntidad", "CapaEntidad\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaPersistencia", "CapaPersistencia\CapaPersistencia.csproj", "{47F19C39-19C6-4E74-9A34-86B2DA7ADD46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaLogica", "CapaLogica\CapaLogica.csproj", "{501764B1-2067-420B-9BD0-509BDCD89FC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaAplicacion", "CapaLogica\CapaAplicacion.csproj", "{501764B1-2067-420B-9BD0-509BDCD89FC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestPrestamos", "UnitTestPrestamos\UnitTestPrestamos.csproj", "{27A676CB-7B3E-4263-9764-01EC0A2726B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{501764B1-2067-420B-9BD0-509BDCD89FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{501764B1-2067-420B-9BD0-509BDCD89FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{501764B1-2067-420B-9BD0-509BDCD89FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27A676CB-7B3E-4263-9764-01EC0A2726B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27A676CB-7B3E-4263-9764-01EC0A2726B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27A676CB-7B3E-4263-9764-01EC0A2726B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27A676CB-7B3E-4263-9764-01EC0A2726B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

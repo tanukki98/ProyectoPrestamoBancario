@@ -1,0 +1,84 @@
+﻿
+
+@model Tuple<List<CapaEntidad.DetallePrestamoEntidad>,CapaEntidad.DetallePrestamoEntidad>
+@{
+    ViewBag.Title = "Mostrar prestamo";
+    Layout = "~/Views/Shared/_LayoutPrimary.cshtml";
+}
+
+<h2>PRESTAMO ACTIVO</h2>
+
+<table class="table" style="width: 100%;margin-top: 30px;">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                <h5 class="font-weight-bold">N# CUOTA</h5>
+            </th>
+            <th>
+                <h5 class="font-weight-bold">AMORTIZACION</h5>
+            </th>
+            <th>
+                <h5 class="font-weight-bold">INTERES</h5>
+            </th>
+            <th>
+                <h5 class="font-weight-bold">MONTO DE CUOTA</h5>
+            </th>
+            <th>
+                <h5 class="font-weight-bold">SALDO</h5>
+            </th>
+            <th>
+                <h5 class="font-weight-bold">ESTADO DE PAGO</h5>
+            </th>
+
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Item1)
+        {
+            if (item.detprestamo_nro_cuota != 0)
+            {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.detprestamo_nro_cuota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detprestamo_amortizacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detprestamo_interes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detprestamo_monto_cuota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.detprestamo_saldo)
+            </td>
+            <td>
+                @if (item.pagoID != null)
+                {<p>Pagado</p>}
+                else
+                {<p> No pagado</p>}
+
+            </td>
+
+
+        </tr>
+            }
+        }
+    </tbody>
+
+</table>
+
+<div class="card">
+    <div class="card-header">
+        Cuota proxima a pagar
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">N# cuota: @Model.Item2.detprestamo_nro_cuota</h5>
+        <h5 class="card-title">Monto: @Model.Item2.detprestamo_monto_cuota</h5>
+
+        <a href="@Url.Action("pagarCuota","RealizarPago",new { id=Model.Item2.detalleprestamoID})" class="btn btn-secondary" >Pagar Cuota</a>
+    </div>
+</div>

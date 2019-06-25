@@ -1,4 +1,4 @@
-﻿
+﻿@model CapaEntidad.ClienteEntidad
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPrimary.cshtml";
@@ -10,19 +10,17 @@
 
     <meta name="viewport" content="width=device-width" />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   
     <title>@ViewBag.Title</title>
 </head>
 <body>
     <h1 class="display-2">REGISTRO DE PRESTAMO</h1>
+
+    <form method="get" action="@Url.Action("index","Home")" class="form-inline" >
+        <label for="DNI">DNI:</label>
+        <input  class="form-control" name="dni" value="@Model.cliente_nombres">
+       
+        <button type="submit" class="btn btn-primary">Buscar Cliente</button>
+    </form>
 </body>
 </html>

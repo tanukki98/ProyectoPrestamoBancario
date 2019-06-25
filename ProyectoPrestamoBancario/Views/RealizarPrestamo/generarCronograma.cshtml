@@ -1,0 +1,95 @@
+﻿@model IEnumerable<CapaEntidad.DetallePrestamoEntidad>
+@using CapaEntidad;
+@{
+    ViewBag.Title = "Realizar Prestamo";
+    Layout = "~/Views/Shared/_LayoutPrimary.cshtml";
+}
+
+<h2>Realizar Prestamo</h2>
+
+
+@{
+    ClienteEntidad cliente = (ClienteEntidad)Session["clientebuscado"];
+    if (cliente != null)
+    {
+        <h3>Nombres y Apellidos: @cliente.cliente_nombres @cliente.cliente_apellidos</h3>
+        <br/>
+
+        <form method="post" class="form-inline">
+
+            <label for="prestamo_monto">Monto:</label>
+            <input class="form-control" id="prestamo_monto" name="prestamo_monto" required oninvalid="this.setCustomValidity('prestamo entre 5000 y 30000')"
+             oninput="this.setCustomValidity('')">
+            
+            <br />
+            <label for="prestamo_tea">TEA:</label>
+            <input class="form-control" id="prestamo_tea" name="prestamo_tea" required oninvalid="this.setCustomValidity('TEA entre 0.10 y 0.20')"
+              oninput="this.setCustomValidity('')">
+            <br />
+            <label for="prestamo_nro_cuotas">Nro Cuotas:</label>
+            <input class="form-control" id="prestamo_nro_cuotas" name="prestamo_nro_cuotas" required oninvalid="this.setCustomValidity('Cuotas entre 4 y 12')"
+               oninput="this.setCustomValidity('')">
+            <br />
+            <button type="submit" value="Submit" class="btn btn-secondary" style="margin-left: 30px;">Generar Cronograma</button>
+        </form>
+    }
+    PrestamoEntidad prestamo = (PrestamoEntidad)Session["prestamoactual"];
+
+    if (prestamo != null)
+    {
+
+        <table class="table" style="width: 100%;margin-top: 30px;">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        <h5 class="font-weight-bold">N# CUOTA</h5>
+                    </th>
+                    <th>
+                        <h5 class="font-weight-bold">AMORTIZACION</h5>
+                    </th>
+                    <th>
+                        <h5 class="font-weight-bold">INTERES</h5>
+                    </th>
+                    <th>
+                        <h5 class="font-weight-bold">MONTO DE CUOTA</h5>
+                    </th>
+                    <th>
+                        <h5 class="font-weight-bold">SALDO</h5>
+                    </th>
+
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.detprestamo_nro_cuota)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.detprestamo_amortizacion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.detprestamo_interes)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.detprestamo_monto_cuota)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.detprestamo_saldo)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+        <br style="margin-top:60px"/>
+        <input type="button" class="btn btn-secondary" value="Realizar Prestamo" onclick="location.href='@Url.Action("guardarPrestamo", "RealizarPrestamo")'" style="margin: auto;
+  display: block;" />
+    }
+
+}
+

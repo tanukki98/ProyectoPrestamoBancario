@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaPersistencia
+namespace CapaAplicacion
 {
-    public class datPrestamo
+    public class PagoServicio
     {
         #region singleton
-        private static readonly datPrestamo UnicaInstancia = new datPrestamo();
-        public static datPrestamo Instancia
+        private static readonly PagoServicio UnicaInstancia = new PagoServicio();
+        public static PagoServicio Instancia
         {
             get
             {
-                return datPrestamo.UnicaInstancia;
+                return PagoServicio.UnicaInstancia;
             }
 
         }

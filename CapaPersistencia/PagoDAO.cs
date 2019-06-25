@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace CapaPersistencia
 {
-    public class datPago
+    public class PagoDAO
     {
         #region singleton
-        private static readonly datPago UnicaInstancia = new datPago();
-        public static datPago Instancia
+        private static readonly PagoDAO UnicaInstancia = new PagoDAO();
+        public static PagoDAO Instancia
         {
             get
             {
-                return datPago.UnicaInstancia;
+                return PagoDAO.UnicaInstancia;
             }
 
         }

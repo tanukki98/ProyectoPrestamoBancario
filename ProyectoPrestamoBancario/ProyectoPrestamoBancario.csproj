@@ -137,6 +137,7 @@
   <ItemGroup>
     <Content Include="Content\css\sidebar.css" />
     <Content Include="Content\images\banklogo.jpg" />
+    <Content Include="Content\images\prestamo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -170,11 +171,17 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutPrimary.cshtml" />
     <Content Include="Views\RealizarPrestamo\Index.cshtml" />
+    <Content Include="Views\RealizarPrestamo\buscarCliente.cshtml" />
+    <Content Include="Views\RealizarPrestamo\ClienteNoValido.cshtml" />
+    <Content Include="Views\RealizarPrestamo\generarCronograma.cshtml" />
+    <Content Include="Views\RealizarPrestamo\guardarPrestamo.cshtml" />
+    <Content Include="Views\RealizarPago\buscarCliente.cshtml" />
+    <Content Include="Views\RealizarPago\mostrarPrestamo.cshtml" />
+    <Content Include="Views\RealizarPago\detalleCuota.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\RealizarPago\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -189,6 +196,10 @@
     <ProjectReference Include="..\CapaEntidad\CapaEntidad.csproj">
       <Project>{591a6302-8ee6-4f95-8d43-3d68316dbc41}</Project>
       <Name>CapaEntidad</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaAplicacion.csproj">
+      <Project>{501764b1-2067-420b-9bd0-509bdcd89fc4}</Project>
+      <Name>CapaAplicacion</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

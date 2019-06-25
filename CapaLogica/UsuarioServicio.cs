@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CapaLogica
+namespace CapaAplicacion
 {
-    public class logPrestamista
+    public class UsuarioServicio
     {
+
         #region singleton
-        private static readonly logPrestamista UnicaInstancia = new logPrestamista();
-        public static logPrestamista Instancia
+        private static readonly UsuarioServicio UnicaInstancia = new UsuarioServicio();
+        public static UsuarioServicio Instancia
         {
             get
             {
-                return logPrestamista.UnicaInstancia;
+                return UsuarioServicio.UnicaInstancia;
             }
 
         }

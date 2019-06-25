@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "guardarPrestamo";
+    Layout = "~/Views/Shared/_LayoutPrimary.cshtml";
+}
+
+
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <h2>guardarPrestamo</h2>
+    @{
+        if (object.Equals(ViewBag.verificacionguardar, "TRUE"))
+        {
+            <h1>PRESTAMO GUARDADO</h1>
+        }
+        else if (object.Equals(ViewBag.verificacionguardar, "FALSE"))
+        {
+            <h1>HUBO UN PROBLEMA AL GUARDAR EL PRESTAMO</h1>
+        }
+    }
+        <a href="@Url.Action("Index","Home")">volver al inicio</a>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+﻿@using CapaEntidad;
+@{
+    ViewBag.Title = "Buscar Cliente";
+    Layout = "~/Views/Shared/_LayoutPrimary.cshtml";
+}
+
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+
+
+
+</head>
+<body>
+
+    <h1 class="display-2">BUSQUEDA DE CLIENTE</h1>
+    @{
+        var error = "";
+        
+        if (TempData.ContainsKey("ERROR"))
+        {
+            error = TempData["ERROR"] as string;
+        }
+        if (error.Equals("NOPRESTAMO"))
+        {
+            @Html.Raw("<script>alert('El cliente no cuenta con prestamo activo');</script>");
+        }
+        else if (error.Equals("CLIENTENOEXISTE"))
+        {
+            @Html.Raw("<script>alert('El cliente no existe');</script>");
+        }
+
+        if (TempData.ContainsKey("msj"))
+        {
+            @Html.Raw(TempData["msj"])
+        }
+
+
+    }
+
+    <form method="post" class="form-inline">
+        <label for="clienteDNI">DNI:</label>
+        <input class="form-control" id="clienteDNI" name="DNI" required>
+
+        <button type="submit" value="Submit" class="btn btn-primary">Buscar Cliente</button>
+    </form>
+
+</body>
+</html>
